@@ -2,11 +2,9 @@
 This is a sample project that translates odata filter query to a document db query.
 A live demo can be found at http://docdbodata.azurewebsites.net
 
-1.       Docdbwebservice is the website project 
+Docdbwebservice is the website project 
 
 There are a few keys in web.config that needs to be changed to reflect your site setting:
-
- 
 
     <add key="DocDB:EndPointUrl" value="https://testdocdb.documents.azure.com:443" />
 
@@ -20,7 +18,7 @@ There are a few keys in web.config that needs to be changed to reflect your site
 
  
 
-2.  seeddocdb is the project that seed the docdb storage with random family records.
+seeddocdb is the project that seed the docdb storage with random family records.
 
 It takes a docdb account and creates a docdb database called FamilyRegistryin which it creates a document collection called TestFamilyCollection.
 
@@ -32,17 +30,13 @@ private static string AuthorizationKey = "your docdb authorization key";
 
  
 
-3.  Other projects:
+Other projects:
 
 QueryTranslator: the project that does query translation
 
 model: data model project
 
 DocDBRepository:  The project that reads data from docdb.
-
- 
-
- 
 
 The translator does not implement Odata All operator. It does not implement odata single function call. 
 
