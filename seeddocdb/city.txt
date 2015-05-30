@@ -1,0 +1,150 @@
+﻿Sitka
+Juneau
+Wrangell
+Anchorage
+Jacksonville
+Anaconda
+Butte
+Oklahoma City
+Houston
+Phoenix
+Nashville
+Los Angeles
+San Antonio
+Suffolk
+Buckeye
+Indianapolis
+Chesapeake
+Dallas
+Fort Worth
+Louisville
+San Diego
+Memphis
+Kansas City
+New York City
+Augusta
+Austin
+Charlotte
+Lexington
+El Paso
+Macon
+Virginia Beach
+Cusseta
+Chicago
+Tucson
+Columbus
+Columbus
+Valdez
+Preston
+Huntsville
+Boulder City
+California City
+Tulsa
+Colorado Springs
+Goodyear
+Albuquerque
+Scottsdale
+Hibbing
+Norman
+San Jose
+Peoria
+New Orleans
+Corpus Christi
+Montgomery
+Wichita
+Aurora
+Denver
+Sierra Vista
+Georgetown
+Birmingham
+Fayetteville
+Carson City
+Raleigh
+Bakersfield
+Mobile
+Detroit
+Bunnell
+Mesa
+Las Vegas
+Chattanooga
+Philadelphia
+Portland
+Atlanta
+Winston-Salem
+Brownsville
+Columbia
+Lynchburg
+Athens
+Little Rock
+Omaha
+Lubbock
+Tampa
+Unalaska
+Orlando
+Salt Lake City
+Columbia
+Yuma
+Babbitt
+Cape Coral
+Abilene
+Palmdale
+Jackson
+Greensboro
+Fresno
+Shreveport
+St. Marys
+Sacramento
+Charleston
+Nightmute
+Plymouth
+Milwaukee
+Arlington
+Tallahassee
+Clarksville
+Durham
+Palm Springs
+Lancaster
+Knoxville
+Amarillo
+Dothan
+Oak Ridge
+Edmond
+Beaumont
+Waco
+Seattle
+Port Arthur
+Baltimore
+Toledo
+Kansas City
+El Reno
+Henderson
+Jonesboro
+Ellsworth
+Caribou
+Laredo
+Fort Wayne
+North Las Vegas
+Independence
+Riverside
+Cincinnati
+Las Cruces
+Cleveland
+Baton Rouge
+Fremont
+Presque Isle
+Des Moines
+Port St. Lucie
+Lawton
+Rome
+North Port
+Savannah
+Lincoln
+Enid
+Rio Rancho
+Apple Valley
+Springfield
+Victorville
+Marana
+Plano
+Grand Prairie
+Wichita Falls

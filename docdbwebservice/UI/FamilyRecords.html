@@ -1,0 +1,35 @@
+﻿<div>
+    <div>{{ctrl.data.length}} records returned.</div>
+    <div ng-show="ctrl.nextlink.length && dataType == 'object'" ng-click="ctrl.RawQuery()" class="clickableText">Click for more results</div>
+    <ul>
+        <li ng-repeat="family in ctrl.data">
+            <div>
+                Address: {{family.address.city + "," + family.address.county + "," + family.address.state}}
+            </div>
+            <div>
+                Parents:
+                <ul>
+                    <li ng-repeat="p in family.parents">
+                        {{p.givenName + " " + p.familyName}}
+                    </li>
+                </ul>
+            </div>
+            <div ng-show="family.children.length">
+                Children:
+                <ul>
+                    <li ng-repeat="c in family.children">
+                        {{c.givenName + " " + c.familyName + ", gender:" + c.gender}}
+                        <div ng-show="c.pets.length">
+                            Pet:
+                            <ul>
+                                <li ng-repeat="p in c.pets">
+                                    {{p.givenName}}
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

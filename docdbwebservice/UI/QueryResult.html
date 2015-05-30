@@ -1,0 +1,7 @@
+﻿<div ng-show="querystring.length">
+    OData Query: {{querystring}}
+</div>
+<div ng-show="ctrl.TranslationResult.length"> DocDB Query: {{ctrl.TranslationResult}} </div>
+<div ng-show="dataType == 'message'" class="errorMessage"> {{ctrl.data}}</div>
+<div ng-show="dataType == 'object'" ng-include="'/UI/FamilyRecords.html'"></div>
+

@@ -1,0 +1,7 @@
+﻿<div ng-init="naviCtrl.SelectedSection('Introduction')">
+    <ul>
+        <li ng-click="naviCtrl.SelectedSection('Introduction')" ng-class="{'clickableText': !naviCtrl.IsSelected('Introduction')}">Introduction</li>
+        <li ng-click="naviCtrl.SelectedSection('OdataEnum')" ng-class="{'clickableText': !naviCtrl.IsSelected('OdataEnum')}">Odata Enum</li>
+        <li ng-click="naviCtrl.SelectedSection('SelfJoin')" ng-class="{'clickableText': !naviCtrl.IsSelected('SelfJoin')}">Odata Any Operator</li>
+    </ul>
+</div>

@@ -1,0 +1,23 @@
+﻿.container { position:relative; padding:0 0 0 205px; }
+#sidebar {
+    position:absolute;
+    top:0; bottom:0; left:0;
+    width:200px;
+    height:400px;
+    background:#eeecec;
+    border:1px solid #000;
+}
+
+.content { border:0px solid #000;
+    margin:5px 0 5px 0;
+}
+.querybox{
+    width: 400px;
+}
+.clickableText{
+    text-decoration: underline;
+    color: blue;
+}
+.errorMessage{
+    color: rosybrown;
+}

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Query Translator Demo</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.1/angular.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.1/angular-resource.js"></script>
+    <script type="text/javascript" src="/Scripts/Controller.js"></script>
+    <link rel="stylesheet" type="text/css" href="/UI/Index.css">
+</head>
+
+<body>
+    <div class="container" ng-controller="navigationCtrl as naviCtrl" ng-app="familyApp">
+        <div id="sidebar" ng-include="'/UI/Navigation.html'">
+        </div>
+        <div>
+            <div class="content" ng-controller="familyCtrl as ctrl" ng-show="naviCtrl.IsSelected('Introduction')">
+                <h4>Introduction</h4>
+                <p>Hi, this is a demo site that uses documentdb as storage and use odata to a front end.</p>
+                <p>
+                    Documentdb is a new storage scheme introduced by Microsoft in 2014. In this scheme, each data record is stored in json format.
+                    The storage service supports a subset of SQL lanuage that can be used to query against these data.
+                </p>
+                <p>Odata is a query language built on top of web API.</p>
+                <p>
+                    In this site, we translate an odata query string (more specifically, the odata filter) to a Documentdb SQL query to query data.
+                    The data flow is shown below.
+                </p>
+                <img src="/UI/diagram.png" alt="data flow">
+                <p>The data we use for demo are (fake) family records with the following structure.</p>
+                <ul>
+                    <li>if the family is registered.</li>
+                    <li>Address</li>
+                    <li>list of parents, and list of children.</li>
+                    <li>Each record for a child also contains a list of pets that belongs to this child.</li>
+                </ul>
+                <p>For example, the query below searches for families that are registered and have 1 child. Press the Submit button to try this query.</p>
+                <form ng-submit="ctrl.QueryFamilyRecords()" ng-init="querystring ='isRegistered eq true and childrenCount eq 1';">
+                    <div>
+                        OData Filter: <input class="querybox" ng-model="querystring">
+                    </div>
+                    <button ng-disable="ctrl.IsRunning && ctrl.TranslatorRunning && querystring.length">Submit</button>
+                </form>
+                <div ng-include="'/UI/QueryResult.html'"></div>
+            </div>
+            <div class="content" ng-controller="familyCtrl as ctrl" ng-show="naviCtrl.IsSelected('OdataEnum')">
+                <h4>Odata Enum</h4>
+                <p>Here we demonstrates an odata filter string which contains enum type: Gender and "and" operator.</p>
+                <form ng-controller="dropDownCtrl as ddCtrl" ng-submit="ctrl.QueryFamilyRecordsBasedonGenderAndState(selectedGender, selectedState)">
+                    Find families in state =
+                    <select ng-model="selectedState">
+                        <option ng-repeat="item in states" value="{{item}}">{{item}}</option>
+                    </select> with at least a child whose Gender =
+                    <select ng-model="selectedGender">
+                        <option ng-repeat="item in genders" value="{{item}}">{{item}}</option>
+                    </select>
+                    <button ng-disable="ctrl.IsRunning && ctrl.TranslatorRunning">Submit</button>
+                </form>
+                <div ng-include="'/UI/QueryResult.html'"></div>
+            </div>
+            <div class="content" ng-controller="familyCtrl as ctrl" ng-show="naviCtrl.IsSelected('SelfJoin')">
+                <h4>Odata 'Any' Operator</h4>
+                <p>Here we demonstrates an odata filter which two levels of any operator. It is translated into self join operation in docdb sql query.</p>
+                <form ng-submit="ctrl.QueryFamilyRecordsBasedonPetName(petName)">
+                    Find families with at least one pet whose name  = <input ng-model="petName" ng-init="petName='ALICE'">
+                    <button ng-disable="ctrl.IsRunning && ctrl.TranslatorRunning">Submit</button>
+                </form>
+                <div ng-include="'/UI/QueryResult.html'"></div>
+            </div>
+            <div class="content" ng-controller="familyCtrl as ctrl" ng-show="naviCtrl.IsSelected('MetaData')">
+                <p>We use document db to store family records. </p>
+                <p>A family record contains address, list of parents, and list of children.</p>
+                <p>Each record for a child also contains a list of pets that belongs to this child.</p>
+            </div>
+        </div>
+</body>
+</html>
+
